@@ -92,7 +92,7 @@ function ProductDetails() {
 
             editingReviewId
                 ? `${import.meta.env.VITE_BACKEND_URL}/product-reviews/${editingReviewId}`
-                : "${import.meta.env.VITE_BACKEND_URL}/product-reviews",
+                : `${import.meta.env.VITE_BACKEND_URL}/product-reviews`,
 
             {
                 method:

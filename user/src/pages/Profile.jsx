@@ -102,7 +102,7 @@ function Profile() {
 
     };
     useEffect(() => {
-        const socket = io("${import.meta.env.VITE_BACKEND_URL}");
+        const socket = io(`${import.meta.env.VITE_BACKEND_URL}`);
 
         socket.on("delivery-updated", (data) => {
             setOrders(prev =>
@@ -185,8 +185,8 @@ function Profile() {
             const user = JSON.parse(localStorage.getItem("jwello_user"));
 
             const url = editId
-                ? "${import.meta.env.VITE_BACKEND_URL}/update-address"
-                : "${import.meta.env.VITE_BACKEND_URL}/save-address";
+                ? `${import.meta.env.VITE_BACKEND_URL}/update-address`
+                : `${import.meta.env.VITE_BACKEND_URL}/save-address`;
 
             const res = await fetch(url, {
                 method: "POST",
@@ -254,7 +254,7 @@ function Profile() {
         if (!confirmDelete) return;
 
         try {
-            const res = await fetch("${import.meta.env.VITE_BACKEND_URL}/delete-address", {
+            const res = await fetch(`${import.meta.env.VITE_BACKEND_URL}/delete-address`, {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json"
@@ -316,7 +316,7 @@ function Profile() {
                 handler: async function (response) {
                     console.log("✅ SUCCESS");
 
-                    await axios.post("${import.meta.env.VITE_BACKEND_URL}/update-order", {
+                    await axios.post(`${import.meta.env.VITE_BACKEND_URL}/update-order`, {
                         id: order._id,
                         status: "Paid",
                         paymentId: response.razorpay_payment_id,
@@ -330,7 +330,7 @@ function Profile() {
                     ondismiss: async function () {
                         console.log("🔥 DISMISSED");
 
-                        await axios.post("${import.meta.env.VITE_BACKEND_URL}/update-order", {
+                        await axios.post(`${import.meta.env.VITE_BACKEND_URL}/update-order`, {
                             id: order._id,
                             status: "Failed"
                         });
@@ -359,7 +359,7 @@ function Profile() {
 
         const url = existing
             ? `${import.meta.env.VITE_BACKEND_URL}/user-reviews/${existing._id}`
-            : "${import.meta.env.VITE_BACKEND_URL}/user-reviews";
+            : `${import.meta.env.VITE_BACKEND_URL}/user-reviews`;
 
         const method = existing ? "PUT" : "POST";
 

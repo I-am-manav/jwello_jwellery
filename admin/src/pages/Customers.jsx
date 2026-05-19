@@ -10,7 +10,7 @@ function Customers() {
     }, [])
 
     const fetchCustomers = () => {
-        fetch("${import.meta.env.VITE_BACKEND_URL}/customers")
+        fetch(`${import.meta.env.VITE_BACKEND_URL}/customers`)
             .then(res => res.json())
             .then(data => setCustomers(data.customers))
     }

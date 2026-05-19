@@ -11,7 +11,7 @@ function Orders() {
     const [customerOrder, setCustomerOrder] = useState('asc')
     const [statusOrder, setStatusOrder] = useState('asc')
     useEffect(() => {
-        fetch("${import.meta.env.VITE_BACKEND_URL}/orders")
+        fetch(`${import.meta.env.VITE_BACKEND_URL}/orders`)
             .then(res => res.json())
             .then(data => {
                 setOrders(data.orders || data)

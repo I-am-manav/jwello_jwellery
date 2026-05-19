@@ -23,7 +23,7 @@ function Products() {
     const fetchProducts = async () => {
 
         try {
-            const res = await fetch("${import.meta.env.VITE_BACKEND_URL}/products")
+            const res = await fetch(`${import.meta.env.VITE_BACKEND_URL}/products`)
             const data = await res.json()
 
             setProducts(data)
@@ -78,7 +78,7 @@ function Products() {
                     body: JSON.stringify(updatedData)
                 })
             } else {
-                await fetch("${import.meta.env.VITE_BACKEND_URL}/products", {
+                await fetch(`${import.meta.env.VITE_BACKEND_URL}/products`, {
                     method: "POST",
                     headers: {
                         "Content-Type": "application/json"

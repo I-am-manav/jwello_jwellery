@@ -66,7 +66,7 @@ function Coupons() {
             status: "active"
         };
 
-        const res = await fetch("${import.meta.env.VITE_BACKEND_URL}/coupons", {
+        const res = await fetch(`${import.meta.env.VITE_BACKEND_URL}/coupons`, {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
@@ -157,7 +157,7 @@ function Coupons() {
 
     useEffect(() => {
 
-        fetch("${import.meta.env.VITE_BACKEND_URL}/coupons")
+        fetch(`${import.meta.env.VITE_BACKEND_URL}/coupons`)
             .then(res => res.json())
             .then(data => {
                 setCoupons(data)

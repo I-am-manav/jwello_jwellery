@@ -102,7 +102,7 @@ function Shop() {
         setWishlistIds(wishlist.map(item => item._id));
     };
     useEffect(() => {
-        fetch("${import.meta.env.VITE_BACKEND_URL}/products")
+        fetch(`${import.meta.env.VITE_BACKEND_URL}/products`)
             .then(res => res.json())
             .then(data => setProducts(data))
     }, [])

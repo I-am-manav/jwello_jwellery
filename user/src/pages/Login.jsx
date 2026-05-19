@@ -41,7 +41,7 @@ function Login() {
 
     const handleRegister = async () => {
         try {
-            const res = await axios.post("${import.meta.env.VITE_BACKEND_URL}/register", registerData);
+            const res = await axios.post(`${import.meta.env.VITE_BACKEND_URL}/register`, registerData);
 
             setMessage(res.data.message);
             setMessageColor(res.data.success ? "green" : "red");
@@ -101,7 +101,7 @@ function Login() {
 
             const res = await axios.post(
 
-                "${import.meta.env.VITE_BACKEND_URL}/login",
+                `${import.meta.env.VITE_BACKEND_URL}/login`,
                 loginData
             ); console.log(res.data);
 
@@ -192,21 +192,21 @@ function Login() {
 
                         <div className="auth-tabs">
                             <button
-                                className={`auth-tab ${activeTab === "login" ? "active" : ""}`}
+                                className={`auth - tab ${activeTab === "login" ? "active" : ""}`}
                                 onClick={() => setActiveTab("login")}
                             >
                                 Sign In
                             </button>
 
                             <button
-                                className={`auth-tab ${activeTab === "register" ? "active" : ""}`}
+                                className={`auth - tab ${activeTab === "register" ? "active" : ""} `}
                                 onClick={() => setActiveTab("register")}
                             >
                                 Create Account
                             </button>
                         </div>
 
-                        <div className={`form-panel ${activeTab === "login" ? "active" : ""}`}>
+                        <div className={`form - panel ${activeTab === "login" ? "active" : ""} `}>
                             <h2 className="auth-heading">Welcome <em>Back</em></h2>
 
                             <div className="auth-form-group">
@@ -240,7 +240,7 @@ function Login() {
                             </button>
                         </div>
 
-                        <div className={`form-panel ${activeTab === "register" ? "active" : ""}`}>
+                        <div className={`form - panel ${activeTab === "register" ? "active" : ""} `}>
                             <h2 className="auth-heading">Join <em>JWELLO</em></h2>
 
                             <div className="auth-form-group">
@@ -300,7 +300,7 @@ function Login() {
                                     style={{
                                         color: messageColor,
                                         background: messageColor === "green" ? "#ecfdf5" : "#fef2f2",
-                                        border: `1px solid ${messageColor === "green" ? "#10B981" : "#EF4444"}`,
+                                        border: `1px solid ${messageColor === "green" ? "#10B981" : "#EF4444"} `,
                                         padding: "10px",
                                         borderRadius: "8px",
                                         fontSize: "13px",

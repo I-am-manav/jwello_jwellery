@@ -29,7 +29,7 @@ function Cart() {
             try {
 
                 const res = await fetch(
-                    "${import.meta.env.VITE_BACKEND_URL}/coupons"
+                    `${import.meta.env.VITE_BACKEND_URL}/coupons`
                 );
 
                 const data = await res.json();

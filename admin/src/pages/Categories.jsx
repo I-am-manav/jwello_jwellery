@@ -11,7 +11,7 @@ function Categories() {
     const [selectedCategory, setSelectedCategory] = useState(null)
     const [categoryProducts, setCategoryProducts] = useState([])
     useEffect(() => {
-        fetch("${import.meta.env.VITE_BACKEND_URL}/categories-count")
+        fetch(`${import.meta.env.VITE_BACKEND_URL}/categories-count`)
             .then(res => res.json())
             .then(data => {
                 if (data.success) {
@@ -45,7 +45,7 @@ function Categories() {
                 })
             })
         } else {
-            await fetch("${import.meta.env.VITE_BACKEND_URL}/add-category", {
+            await fetch(`${import.meta.env.VITE_BACKEND_URL}/add-category`, {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json"
@@ -90,7 +90,7 @@ function Categories() {
                         {categories.map((item, index) => (
                             <div key={index} className="cat-admin-card" onClick={async () => {
                                 setSelectedCategory(item.name)
-                                const res = await fetch("${import.meta.env.VITE_BACKEND_URL}/products")
+                                const res = await fetch(`${import.meta.env.VITE_BACKEND_URL}/products`)
                                 const data = await res.json()
                                 const filtered = data.filter(
                                     p => p.category?.toLowerCase() === item.name.toLowerCase())
