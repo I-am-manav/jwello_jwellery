@@ -27,7 +27,7 @@ function ForgotPassword() {
         }
 
         try {
-            await axios.post("http://localhost:5000/send-otp");
+            await axios.post("https://jwello-jwellery.onrender.com/send-otp", { email });
 
             setBtnText("OTP Sent");
             setBtnColor("#10B981");
@@ -46,7 +46,7 @@ function ForgotPassword() {
     /* VERIFY OTP */
     const handleVerifyOTP = async () => {
         try {
-            const res = await axios.post("http://localhost:5000/verify-otp", {
+            const res = await axios.post("https://jwello-jwellery.onrender.com/verify-otp", {
                 otp
             });
 

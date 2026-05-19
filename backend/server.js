@@ -28,7 +28,7 @@ const razorpay = new Razorpay({
 });
 
 /* MongoDB */
-mongoose.connect("mongodb+srv://project:project@ms.c2rd64t.mongodb.net/jwello_jewellery").then(() => console.log("MongoDB Connected"))
+mongoose.connect(process.env.MONGO_URI).then(() => console.log("MongoDB Connected"))
   .catch(err => console.log("Mongo Error:", err));
 
 /* User Schema */
